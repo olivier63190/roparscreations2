@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ropars Créations · Artiste créateur · Pièces uniques d'exception</title>
+  <meta name="description" content="Olivier Ropars crée des pièces uniques — mobilier-sculptures, fresques murales, toiles d'auteur — pour décorateurs d'intérieur et clients exigeants." />
+  <meta property="og:title" content="Ropars Créations · Artiste créateur · Pièces uniques d'exception" />
+  <meta property="og:description" content="Olivier Ropars crée des pièces uniques — mobilier-sculptures, fresques murales, toiles d'auteur — pour décorateurs d'intérieur et clients exigeants." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & VARIABLES ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #f5f0e8;
+      --warm-off: #faf7f2;
+      --dark:     #1a1714;
+      --charcoal: #2d2926;
+      --brown:    #6b5a45;
+      --gold:     #b8976a;
+      --gold-lt:  #d4b896;
+      --border:   rgba(107,90,69,.18);
+      --ff-serif: 'Cormorant Garamond', Georgia, serif;
+      --ff-sans:  'Montserrat', sans-serif;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-sans);
+      background: var(--cream);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ── UTILITIES ── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-tag {
+      font-family: var(--ff-sans);
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .roman { font-variant-numeric: oldstyle-nums; }
+
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(26,23,20,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184,151,106,.15);
+    }
+
+    .nav-brand {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: .06em;
+      color: #fff;
+    }
+    .nav-brand em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+    nav a {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+      transition: color var(--transition);
+    }
+    nav a:hover { color: var(--gold-lt); }
+
+    /* ── HERO ── */
+    #top {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 60% 50%, rgba(107,90,69,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 80% at 20% 80%, rgba(184,151,106,.08) 0%, transparent 60%),
+        var(--dark);
+    }
+    /* Grain overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: .4;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+    }
+
+    .hero-eyebrow {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #fff;
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .btn-discover {
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      border: 1px solid rgba(184,151,106,.45);
+      padding: .9rem 2.4rem;
+      transition: background var(--transition), color var(--transition);
+    }
+    .btn-discover:hover {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+
+    /* ── ARTIST SECTION ── */
+    #parcours {
+      padding: 7rem 0;
+      background: var(--warm-off);
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .artist-img-wrap {
+      position: relative;
+    }
+    .artist-img-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: sepia(.08) contrast(1.04);
+    }
+    .artist-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem; left: -1.5rem;
+      width: 60%; height: 60%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+
+    .artist-quote {
+      font-family: var(--ff-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--brown);
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0 2rem;
+      line-height: 1.5;
+    }
+
+    .artist-text {
+      font-size: .88rem;
+      color: var(--charcoal);
+      line-height: 1.9;
+    }
+    .artist-text p + p { margin-top: 1rem; }
+
+    /* ── WORKS ── */
+    #oeuvres {
+      padding: 7rem 0;
+      background: var(--cream);
+    }
+
+    .works-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .work-chapter {
+      margin-bottom: 5rem;
+    }
+
+    .chapter-label {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .chapter-label .roman-num {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: .12em;
+    }
+    .chapter-label .chapter-hr {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .chapter-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    .chapter-title em { font-style: italic; color: var(--gold); }
+
+    .works-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .works-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .works-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--charcoal);
+    }
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform .5s cubic-bezier(.4,0,.2,1), opacity .4s;
+      opacity: .92;
+    }
+    .work-card:hover img {
+      transform: scale(1.04);
+      opacity: .7;
+    }
+    .work-card-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 1.2rem 1rem;
+      background: linear-gradient(transparent, rgba(20,17,14,.85));
+      transform: translateY(6px);
+      transition: transform var(--transition);
+    }
+    .work-card:hover .work-card-info { transform: translateY(0); }
+    .work-card-cat {
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: .3rem;
+    }
+    .work-card-name {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    /* ── TIMELINE ── */
+    #timeline {
+      padding: 7rem 0;
+      background: var(--charcoal);
+    }
+    #timeline .section-title { color: #fff; }
+
+    .timeline-intro {
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      margin: 1.2rem 0 4rem;
+      max-width: 520px;
+    }
+
+    .timeline-list {
+      list-style: none;
+      border-left: 1px solid rgba(184,151,106,.3);
+      padding-left: 2.5rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: .35rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      transform: translateX(-50%) translateX(1px);
+    }
+    .timeline-year {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+    .timeline-role {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: .3rem;
+    }
+    .timeline-place {
+      font-size: .8rem;
+      color: rgba(255,255,255,.45);
+      margin-bottom: .6rem;
+    }
+    .timeline-desc {
+      font-size: .85rem;
+      color: rgba(255,255,255,.65);
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    /* ── ATELIER / PROCESS ── */
+    #atelier {
+      padding: 7rem 0;
+      background: var(--cream);
+    }
+
+    .atelier-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+    .process-step {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+    .process-num {
+      font-family: var(--ff-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: .8rem;
+    }
+    .process-title {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: .7rem;
+    }
+    .process-title em { font-style: italic; color: var(--gold); }
+    .process-desc {
+      font-size: .82rem;
+      color: var(--brown);
+      line-height: 1.75;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 7rem 0;
+      background: var(--dark);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-logo img {
+      height: 52px;
+      margin-bottom: 1.5rem;
+    }
+    .contact-quote {
+      font-family: var(--ff-serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,.75);
+      line-height: 1.5;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+
+    .contact-details { }
+    .contact-item {
+      margin-bottom: 2rem;
+    }
+    .contact-label {
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+    .contact-value {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.85);
+    }
+    .contact-value a:hover { color: var(--gold-lt); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(184,151,106,.12);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-size: .7rem;
+      color: rgba(255,255,255,.35);
+      letter-spacing: .06em;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-socials a {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      transition: color var(--transition);
+    }
+    .footer-socials a:hover { color: var(--gold-lt); }
+
+    /* ── LIGHT BOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(10,8,6,.92);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-height: 85vh;
+      max-width: 90vw;
+      object-fit: contain;
+      border: 1px solid rgba(184,151,106,.2);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,.6);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      transition: color var(--transition);
+    }
+    .lightbox-close:hover { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .artist-grid   { grid-template-columns: 1fr; }
+      .process-grid  { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .works-grid-3  { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .works-grid-2,
+      .works-grid-3 { grid-template-columns: 1fr; }
+      .process-grid  { grid-template-columns: 1fr; }
+      .artist-img-wrap::before { display: none; }
+    }
+
+    /* ── FADE-IN ON SCROLL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <a href="#top" class="nav-brand">Ropars <em>Créations</em></a>
+    <nav>
+      <a href="#oeuvres">Œuvres</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">L'art au service de l'intérieur</p>
+      <h1 class="hero-title">
+        Quand la nature<br>entre dans la <em>maison</em>
+      </h1>
+      <a href="#oeuvres" class="btn-discover">Découvrir</a>
+    </div>
+  </section>
+
+  <!-- ARTIST -->
+  <section id="parcours">
+    <div class="container">
+      <div class="artist-grid">
+        <div class="artist-img-wrap reveal">
+          <img
+            src="https://artful-sanctuary-gallery.lovable.app/assets/artist-portrait-BrkFsjcm.jpg"
+            alt="Olivier Ropars dans son atelier"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal">
+          <p class="section-tag">L'artiste</p>
+          <h2 class="section-title">Olivier <em>Ropars</em></h2>
+          <blockquote class="artist-quote">
+            « J'aime être conteur d'histoires. Chaque œuvre n'est que l'aboutissement de l'une d'elles. »
+          </blockquote>
+          <div class="artist-text">
+            <p>Vingt-trois années passées chez Michelin comme designer industriel ont forgé une rigueur rare : celle du dessin technique, du prototype, de la matière domptée. Une école du geste exact, où rien ne se laisse au hasard.</p>
+            <p>Architecte d'intérieur de formation, Olivier Ropars conçoit l'espace comme une partition. Il sait lire un lieu, en deviner les silences, et y répondre par une pièce qui semble avoir toujours été là.</p>
+            <p>En 2023, il fonde Ropars Créations à Lezoux, en Auvergne. Une maison d'artiste-créateur portée par cette double culture, où la sensibilité de l'artiste se conjugue à la précision du designer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="oeuvres">
+    <div class="container">
+      <div class="works-header reveal">
+        <p class="section-tag">Les œuvres</p>
+        <h2 class="section-title">Quatre territoires, <em>une seule main</em></h2>
+      </div>
+
+      <!-- I — Mobilier sculptural -->
+      <div class="work-chapter reveal">
+        <div class="chapter-label">
+          <span class="roman-num">I — Mobilier sculptural</span>
+          <div class="chapter-hr"></div>
+        </div>
+        <h3 class="chapter-title">Pièces <em>habitées</em></h3>
+        <div class="works-grid works-grid-3">
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/nature-gourmande-DcZPoqKk.jpg" alt="Nature Gourmande" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Cabinet de curiosités</p>
+              <p class="work-card-name">Nature Gourmande</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/chandelier-smoking-CpfYrp5n.png" alt="Smoking" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Chandelier</p>
+              <p class="work-card-name">Smoking</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/console-freaks-BYH9CV-n.png" alt="Freaks" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Console</p>
+              <p class="work-card-name">Freaks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- II — Fresques murales -->
+      <div class="work-chapter reveal">
+        <div class="chapter-label">
+          <span class="roman-num">II — Fresques murales</span>
+          <div class="chapter-hr"></div>
+        </div>
+        <h3 class="chapter-title">Le mur, <em>surface vivante</em></h3>
+        <div class="works-grid works-grid-2">
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/arbre-de-vie-BwBL7kMw.jpg" alt="Arbre de vie" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Fresque murale</p>
+              <p class="work-card-name">Arbre de vie</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/feuilles-dor-BztoyHWi.png" alt="Feuilles d'or" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Fresque murale</p>
+              <p class="work-card-name">Feuilles d'or</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- III — Intégration architecturale -->
+      <div class="work-chapter reveal">
+        <div class="chapter-label">
+          <span class="roman-num">III — Intégration architecturale</span>
+          <div class="chapter-hr"></div>
+        </div>
+        <h3 class="chapter-title">L'art <em>incorporé</em></h3>
+        <div class="works-grid works-grid-3">
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/dans-les-bois-Baw6-CN2.jpeg" alt="Dans les bois" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Claustra</p>
+              <p class="work-card-name">Dans les bois</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/nature-sort-boite-jSGoHM0d.png" alt="La nature sort de sa boîte" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Fresque &amp; poignées</p>
+              <p class="work-card-name">La nature sort de sa boîte</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/ludotheque-odQs97KE.png" alt="À l'orée du bois" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Ludothèque</p>
+              <p class="work-card-name">À l'orée du bois</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IV — Toiles d'auteur -->
+      <div class="work-chapter reveal">
+        <div class="chapter-label">
+          <span class="roman-num">IV — Toiles d'auteur</span>
+          <div class="chapter-hr"></div>
+        </div>
+        <h3 class="chapter-title">Le regard <em>à hauteur d'œil</em></h3>
+        <div class="works-grid works-grid-2">
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/robe-de-bois-DHbTaQIo.png" alt="La robe de bois" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Toile</p>
+              <p class="work-card-name">La robe de bois</p>
+            </div>
+          </div>
+          <div class="work-card" onclick="openLightbox(this)">
+            <img src="https://artful-sanctuary-gallery.lovable.app/assets/gafa-apple-mtQDMO2K.png" alt="GAFA Apple" loading="lazy" />
+            <div class="work-card-info">
+              <p class="work-card-cat">Toile</p>
+              <p class="work-card-name">GAFA Apple</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-tag" style="color:var(--gold-lt)">Le parcours</p>
+        <h2 class="section-title">Une double culture</h2>
+        <p class="timeline-intro">Designer industriel, architecte d'intérieur, artiste — trois disciplines, une même main.</p>
+      </div>
+      <ul class="timeline-list reveal">
+        <li class="timeline-item">
+          <p class="timeline-year">2023 · Aujourd'hui</p>
+          <p class="timeline-role">Fondation Ropars Créations</p>
+          <p class="timeline-place">Lezoux · Auvergne</p>
+          <p class="timeline-desc">Maison d'artiste-créateur. Pièces uniques pour décorateurs d'intérieur et collectionneurs.</p>
+        </li>
+        <li class="timeline-item">
+          <p class="timeline-year">2019 · 4 ans</p>
+          <p class="timeline-role">Artiste peintre indépendant</p>
+          <p class="timeline-place">Clermont-Ferrand</p>
+          <p class="timeline-desc">Toiles d'auteur, fresques murales, premières pièces de mobilier sculptural.</p>
+        </li>
+        <li class="timeline-item">
+          <p class="timeline-year">1999 · 23 ans</p>
+          <p class="timeline-role">Designer industriel · Michelin</p>
+          <p class="timeline-place">Clermont-Ferrand</p>
+          <p class="timeline-desc">Conception produit, prototypage, rigueur du dessin technique au service de la matière.</p>
+        </li>
+        <li class="timeline-item">
+          <p class="timeline-year">2008</p>
+          <p class="timeline-role">Architecte d'intérieur · MUR</p>
+          <p class="timeline-place">Diplôme</p>
+          <p class="timeline-desc">Formation à la lecture du lieu, à l'agencement, à la dramaturgie de l'espace habité.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ATELIER / PROCESS -->
+  <section id="atelier">
+    <div class="container">
+      <div class="atelier-header reveal">
+        <p class="section-tag">Pour les professionnels</p>
+        <h2 class="section-title">Une collaboration <em>sur-mesure</em></h2>
+        <p style="max-width:560px;margin:.8rem auto 0;font-size:.88rem;color:var(--brown);text-align:center;">
+          Olivier Ropars travaille en étroite collaboration avec décorateurs d'intérieur et architectes pour des clients exigeants.
+        </p>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <p class="process-num">I.</p>
+          <h3 class="process-title">Lecture du lieu</h3>
+          <p class="process-desc">Une visite, une écoute. Comprendre la pièce, ses lumières, les usages, la sensibilité des habitants.</p>
+        </div>
+        <div class="process-step">
+          <p class="process-num">II.</p>
+          <h3 class="process-title">Conception <em>en dialogue</em></h3>
+          <p class="process-desc">Dessins, échantillons, prototypes. Chaque décision validée à quatre mains avec le décorateur.</p>
+        </div>
+        <div class="process-step">
+          <p class="process-num">III.</p>
+          <h3 class="process-title">Pièce unique</h3>
+          <p class="process-desc">Une œuvre numérotée, signée. Conçue pour un lieu et un seul. Aucune reproduction.</p>
+        </div>
+        <div class="process-step">
+          <p class="process-num">IV.</p>
+          <h3 class="process-title">Discrétion <em>professionnelle</em></h3>
+          <p class="process-desc">Respect absolu de la confidentialité — clients, projets, lieux. Aucune communication sans accord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-logo reveal">
+          <img
+            src="https://artful-sanctuary-gallery.lovable.app/assets/logo-ropars-white-CPuRtl_b.png"
+            alt="Ropars Créations"
+            style="height:52px;margin-bottom:1.5rem;"
+          />
+          <blockquote class="contact-quote">
+            « Chaque intérieur mérite une œuvre qui lui ressemble. Construisons-la ensemble. »
+          </blockquote>
+        </div>
+        <div class="contact-details reveal">
+          <div class="contact-item">
+            <p class="contact-label">Atelier</p>
+            <p class="contact-value">17 rue de la Baronne<br>63190 Lezoux</p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">Téléphone</p>
+            <p class="contact-value"><a href="tel:+33625768484">06 25 76 84 84</a></p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">Email</p>
+            <p class="contact-value"><a href="mailto:o.ropars@gmail.com">o.ropars@gmail.com</a></p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">Instagram</p>
+            <p class="contact-value"><a href="https://www.instagram.com/roparscreations/" target="_blank" rel="noopener">@roparscreations</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-copy">© 2026 Ropars Créations · Tous droits réservés</p>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/roparscreations/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/olivier.ropars.3" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/in/olivier-ropars/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    /* ── Lightbox ── */
+    function openLightbox(card) {
+      const img = card.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (!e || e.target !== document.getElementById('lightbox-img')) {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ── Active nav highlight ── */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+          ? 'var(--gold-lt)'
+          : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
